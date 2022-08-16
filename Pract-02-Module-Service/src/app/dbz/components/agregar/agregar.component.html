@@ -1,0 +1,68 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h4>
+      {{opcion | uppercase}}
+    </h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" [formGroup]="dbzForm">
+      <div class="mb-3">
+        <label for="codigo">Código</label>
+        <input class="form-control" type="number" id="codigo" name="codigo" required formControlName="codigo" />
+        <div *ngIf="dbzForm.get('codigo')?.touched && dbzForm.get('codigo')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="nombre">Nombre</label>
+        <input class="form-control" type="text" id="nombre" name="nombre" required formControlName="nombre" />
+        <div *ngIf="dbzForm.get('nombre')?.touched && dbzForm.get('nombre')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="ciudad">Ciudad</label>
+        <input class="form-control" type="text" id="ciudad" name="ciudad" required formControlName="ciudad" />
+        <div *ngIf="dbzForm.get('ciudad')?.touched && dbzForm.get('ciudad')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="edad">Poder</label>
+        <input class="form-control" type="number" id="edad" name="edad" required formControlName="poder" />
+        <div *ngIf="dbzForm.get('poder')?.touched && dbzForm.get('poder')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-dark form-control" [disabled]="dbzForm.invalid">
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- <form (ngSubmit)="insert()">
+  <div>
+    <input type="number" id="codigo" name="codigo" placeholder="Código" [(ngModel)]="nuevo.codigo">
+  </div>
+  <div>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="nuevo.nombre">
+  </div>
+  <div>
+    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" [(ngModel)]="nuevo.ciudad">
+  </div>
+  <div>
+    <input type="number" id="poder" name="poder" placeholder="Poder" [(ngModel)]="nuevo.poder">
+  </div>
+  <div>
+    <button type="submit">Insertar</button>
+  </div>
+</form>
+ -->

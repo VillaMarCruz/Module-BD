@@ -1,0 +1,17 @@
+
+<div class="d-flex justify-content-center mb-3">
+  <div class="m-2">
+    <button class="btn btn-success" (click)="opcion=true">Mostrar Modulo DBZ</button>
+  </div>
+  <div class="m-2">
+    <button class="btn btn-warning" (click)="opcion=false">Mostrar Modulo con Base de Datos</button>
+  </div>
+</div>
+
+<div *ngIf="opcion; else elseBlock">
+  <app-pagina-principal></app-pagina-principal>
+</div>
+<ng-template #elseBlock>
+  <app-pagina-principal-estudiante></app-pagina-principal-estudiante>
+</ng-template>
+

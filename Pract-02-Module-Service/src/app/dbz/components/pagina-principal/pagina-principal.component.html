@@ -1,0 +1,19 @@
+<div class="text-title">
+  <h1>Dragon Ball Z</h1>
+  <hr>
+</div>
+<div class="container">
+  <div class="row mb-3">
+    <button class="btn btn-success" (click)="nuevo()">Nuevo</button>
+  </div>
+  <div class="row">
+    <div class="col mb-3">
+      <app-personajes (personajeModificado)="mostrar($event)"></app-personajes>
+    </div>
+    <div class="col">
+      <app-agregar [dbzForm]="dbzFormInit" [opcion]="opcion"></app-agregar>
+    </div>
+  </div>
+</div>
+
+
