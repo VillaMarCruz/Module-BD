@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h4>
+      {{opcion[0] | uppercase}}
+    </h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" [formGroup]="estudianteForm">
+      <div class="mb-3">
+        <label for="cedula">Cécula</label>
+        <input class="form-control" type="text" id="cedula" name="cedula" required formControlName="cedula" />
+        <div *ngIf="estudianteForm.get('cedula')?.touched && estudianteForm.get('cedula')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="apellidos">Apellidos</label>
+        <input class="form-control" type="text" id="apellidos" name="apellidos" required formControlName="apellidos" />
+        <div *ngIf="estudianteForm.get('apellidos')?.touched && estudianteForm.get('apellidos')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="nombres">Nombres</label>
+        <input class="form-control" type="text" id="nombres" name="nombres" required formControlName="nombres" />
+        <div *ngIf="estudianteForm.get('nombres')?.touched && estudianteForm.get('nombres')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="semestre">Semestre</label>
+        <input class="form-control" type="text" id="semestre" name="semestre" required formControlName="semestre" />
+        <div *ngIf="estudianteForm.get('semestre')?.touched && estudianteForm.get('semestre')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="carrera">Carrera</label>
+        <input class="form-control" type="text" id="carrera" name="carrera" required formControlName="carrera" />
+        <div *ngIf="estudianteForm.get('carrera')?.touched && estudianteForm.get('carrera')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="facultad">Facultad</label>
+        <input class="form-control" type="text" id="facultad" name="facultad" required formControlName="facultad" />
+        <div *ngIf="estudianteForm.get('facultad')?.touched && estudianteForm.get('facultad')?.errors?.['required']"
+          class="alert alert-danger">
+          Este campo es necesario.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-dark form-control" [disabled]="estudianteForm.invalid">
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FetchAllStudentResponse, Estudiante } from '../interfaces/estudiante';
+import { FetchAllStudentResponse, Estudiante, FetchAllStudentResponseDetail } from '../interfaces/estudiante';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,8 @@ export class EstudianteService {
     return this.http.get<FetchAllStudentResponse>(this.API_SERVER);
   }
 
-  public detail(id: string): Observable<FetchAllStudentResponse>{
-    return this.http.get<FetchAllStudentResponse>(this.API_SERVER + id)
+  public detail(id: string): Observable<FetchAllStudentResponseDetail>{
+    return this.http.get<FetchAllStudentResponseDetail>(this.API_SERVER + id)
   }
 
   public save(estudiante: Estudiante):Observable<FetchAllStudentResponse>{

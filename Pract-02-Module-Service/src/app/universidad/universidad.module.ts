@@ -8,6 +8,7 @@ import { PaginaPrincipalComponent } from './estudiante/components/pagina-princip
 import { EstudianteListaComponent } from './estudiante/components/estudiante-lista/estudiante-lista.component';
 import { EstudianteFormularioComponent } from './estudiante/components/estudiante-formulario/estudiante-formulario.component';
 import { EstudianteDetalleComponent } from './estudiante/components/estudiante-detalle/estudiante-detalle.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { EstudianteDetalleComponent } from './estudiante/components/estudiante-d
     CommonModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
   ],
   exports:[

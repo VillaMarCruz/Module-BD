@@ -15,7 +15,6 @@ export class PaginaPrincipalComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-    private dbzService: DbzService
   ) { }
 
   ngOnInit(): void {

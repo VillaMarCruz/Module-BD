@@ -26,7 +26,7 @@
             <td>{{ estudiante.carrera }}</td>
             <td>{{ estudiante.facultad }}</td>
             <td>
-              <button type="button" class="btn btn-warning">
+              <button type="button" class="btn btn-warning" (click)="modificar(estudiante._id)">
                 <i class="fa-solid fa-pencil"></i>
               </button>
             </td>

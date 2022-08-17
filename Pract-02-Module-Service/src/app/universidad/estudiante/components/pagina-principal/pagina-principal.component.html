@@ -1,1 +1,16 @@
-<app-estudiante-lista></app-estudiante-lista>
+<div *ngIf="opcion; else elseBlock">
+  <div class="d-flex justify-content-center mb-3">
+    <div class="m-2">
+      <button class="btn btn-success" (click)="nuevo()">Nuevo</button>
+    </div>
+  </div>
+  <app-estudiante-lista (opcion)="mostrar($event)"></app-estudiante-lista>
+</div>
+<ng-template #elseBlock>
+  <div class="d-flex justify-content-center mb-3">
+    <div class="m-2">
+      <button class="btn btn-success" (click)="opcion=true">Volver</button>
+    </div>
+  </div>
+  <app-estudiante-formulario [opcion]="opcionSubmit"></app-estudiante-formulario>
+</ng-template>

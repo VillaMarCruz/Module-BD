@@ -5,6 +5,11 @@ export interface FetchAllStudentResponse {
   body:    Estudiante[];
 }
 
+export interface FetchAllStudentResponseDetail {
+  message: string;
+  body:    Estudiante;
+}
+
 export interface Estudiante {
   _id:       string;
   cedula:    string;
