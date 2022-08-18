@@ -21,14 +21,14 @@ export class EstudianteService {
   }
 
   public save(estudiante: Estudiante):Observable<FetchAllStudentResponseDetail>{
-    return this.http.post<FetchAllStudentResponseDetail>(this.API_SERVER, estudiante);
+    return this.http.post<FetchAllStudentResponseDetail>(this.API_SERVER, estudiante); //http://localhost:3800/api/estudiantes/
   }
 
   public update(id: string, estudiante:Estudiante):Observable<FetchAllStudentResponseDetail>{
-    return this.http.put<FetchAllStudentResponseDetail>(this.API_SERVER + id, estudiante)
+    return this.http.put<FetchAllStudentResponseDetail>(this.API_SERVER + id, estudiante); //http://localhost:3800/api/estudiantes/41254121521
   }
 
   public delete(id:string):Observable<FetchAllStudentResponseDetail>{
-    return this.http.delete<FetchAllStudentResponseDetail>(this.API_SERVER + id);
+    return this.http.delete<FetchAllStudentResponseDetail>(this.API_SERVER + id); //http://localhost:3800/api/estudiantes/41254121521
   }
 }
