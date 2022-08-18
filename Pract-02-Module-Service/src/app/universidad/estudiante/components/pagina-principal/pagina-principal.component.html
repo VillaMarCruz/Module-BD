@@ -12,5 +12,7 @@
       <button class="btn btn-success" (click)="opcion=true">Volver</button>
     </div>
   </div>
-  <app-estudiante-formulario [opcion]="opcionSubmit"></app-estudiante-formulario>
+  <div class="d-flex justify-content-center mb-3">
+    <app-estudiante-formulario [opcion]="opcionSubmit" (opcionSubmit)="regresarSubmit($event)"></app-estudiante-formulario>
+  </div>
 </ng-template>

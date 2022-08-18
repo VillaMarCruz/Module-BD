@@ -11,10 +11,7 @@ export class PaginaPrincipalComponent implements OnInit {
   opcion = true;
   opcionSubmit: string[] = ['insertar', ''];
 
-  constructor(
-    private estudianteService: EstudianteService,
-    private utilService: UtilService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
 
@@ -28,6 +25,12 @@ export class PaginaPrincipalComponent implements OnInit {
   nuevo(){
     this.opcion=false;
     this.opcionSubmit = ['insertar', ''];
+  }
+
+  regresarSubmit(opcionSubmit: boolean){
+    console.log(this.opcion);
+    this.opcion = opcionSubmit;
+    console.log(this.opcion);
   }
 
 }

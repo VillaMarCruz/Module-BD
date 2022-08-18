@@ -19,3 +19,5 @@ export interface Estudiante {
   carrera:   string;
   facultad:  string;
 }
+
+

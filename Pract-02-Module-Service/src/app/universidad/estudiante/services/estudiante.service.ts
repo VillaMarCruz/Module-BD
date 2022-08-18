@@ -13,23 +13,22 @@ export class EstudianteService {
   constructor(private http: HttpClient) { }
 
   public lista(): Observable<FetchAllStudentResponse>{
-    return this.http.get<FetchAllStudentResponse>(this.API_SERVER);
+    return this.http.get<FetchAllStudentResponse>(this.API_SERVER); //http://localhost:3800/api/estudiantes/
   }
 
   public detail(id: string): Observable<FetchAllStudentResponseDetail>{
-    return this.http.get<FetchAllStudentResponseDetail>(this.API_SERVER + id)
+    return this.http.get<FetchAllStudentResponseDetail>(this.API_SERVER + id); //http://localhost:3800/api/estudiantes/41254121521
   }
 
-  public save(estudiante: Estudiante):Observable<FetchAllStudentResponse>{
-    return this.http.post<FetchAllStudentResponse>(this.API_SERVER, estudiante);
+  public save(estudiante: Estudiante):Observable<FetchAllStudentResponseDetail>{
+    return this.http.post<FetchAllStudentResponseDetail>(this.API_SERVER, estudiante);
   }
 
-  public update(id: string, estudiante:Estudiante):Observable<FetchAllStudentResponse>{
-    return this.http.put<FetchAllStudentResponse>(this.API_SERVER + id, estudiante)
+  public update(id: string, estudiante:Estudiante):Observable<FetchAllStudentResponseDetail>{
+    return this.http.put<FetchAllStudentResponseDetail>(this.API_SERVER + id, estudiante)
   }
 
-  public delete(id:string):Observable<FetchAllStudentResponse>{
-    return this.http.delete<FetchAllStudentResponse>(this.API_SERVER + id);
+  public delete(id:string):Observable<FetchAllStudentResponseDetail>{
+    return this.http.delete<FetchAllStudentResponseDetail>(this.API_SERVER + id);
   }
-
 }

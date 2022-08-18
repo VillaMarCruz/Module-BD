@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { EstudianteService } from '../../services/estudiante.service';
@@ -14,6 +14,9 @@ export class EstudianteFormularioComponent implements OnInit {
 
   @Input()
   opcion: string[];
+  @Output()
+  opcionSubmit = new EventEmitter<boolean>();
+
   estudianteForm: FormGroup;
 
   constructor(
@@ -80,6 +83,7 @@ export class EstudianteFormularioComponent implements OnInit {
         }
       });
     }
-
+    this.estudianteForm.reset();
+    this.opcionSubmit.emit(false);
   }
 }
